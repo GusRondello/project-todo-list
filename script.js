@@ -24,29 +24,28 @@ window.onload = function () {
   }
 
   function taskDone(event) {
-      if (event.target.classList.contains('completed')) {
+    if (event.target.classList.contains('completed')) {
       event.target.classList.remove('completed');
     } else {
-        event.target.classList.add('completed');
+      event.target.classList.add('completed');
     }
   }
 
   function deleteAll() {
-      const taskList = document.querySelectorAll('li');
-      for (let i = 0; i < taskList.length; i += 1){
-        const tasks = taskList[i];
-        tasks.remove(); 
+    const taskList = document.querySelectorAll('li');
+    for (let i = 0; i < taskList.length; i += 1) {
+      const tasks = taskList[i];
+      tasks.remove();
     }
   }
 
   function deleteCompleted() {
     const completedTasks = document.querySelectorAll('.completed');
-      for (let i = 0; i < completedTasks.length; i += 1){
-        const completedRemove = completedTasks[i];
-        completedRemove.remove(); 
+    for (let i = 0; i < completedTasks.length; i += 1) {
+      const completedRemove = completedTasks[i];
+      completedRemove.remove();
     }
   }
-
 
   criaTarefa.addEventListener('click', createTask);
   listaTarefas.addEventListener('click', selectedTask);
