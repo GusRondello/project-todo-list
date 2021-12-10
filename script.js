@@ -4,6 +4,7 @@ window.onload = function () {
   const listaTarefas = document.getElementById('lista-tarefas');
   const apagaTudo = document.getElementById('apaga-tudo');
   const removeCompleto = document.getElementById('remover-finalizados');
+  const salvar = document.getElementById('salvar-tarefas');
 
   function createTask() {
     let tarefaCriada = document.createElement('li');
@@ -47,9 +48,17 @@ window.onload = function () {
     }
   }
 
+/*   // referencia: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+  function saveTasks() {
+    const salvarTarefa = document.querySelectorAll('li')
+
+    localStorage.setItem('tarefasAntigas', JSON.stringify(arrayListas));
+  }
+ */
   criaTarefa.addEventListener('click', createTask);
   listaTarefas.addEventListener('click', selectedTask);
   listaTarefas.addEventListener('dblclick', taskDone);
   apagaTudo.addEventListener('click', deleteAll);
   removeCompleto.addEventListener('click', deleteCompleted);
+ // salvar.addEventListener('click', saveTasks);
 };
